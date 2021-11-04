@@ -1,14 +1,21 @@
 import sqlite3
 
-from PyQt5 import uic
-from PyQt5.QtGui import QPixmap
+from PyQt5 import uic, QtCore, QtGui
+from PyQt5.QtGui import QPixmap, QCursor
 from PyQt5.QtWidgets import QLabel, QMainWindow
+
+from Update_form import Update_form
 
 
 class History_from(QMainWindow):
     def __init__(self, clear, names):
         super().__init__()
         uic.loadUi('designs/History.ui', self)  # TODO ПОДКЛЮЧЕНИЕ К ДИЗАЙНУ
+        self.update_inf.setStyleSheet(
+            "QPushButton {background-image: url(background-image/select_2.jpg);"
+            " border-radius: 5px; color: rgb(255, 255, 255);}")
+        self.update_inf.setCursor(QCursor(QtCore.Qt.PointingHandCursor))
+        self.update_inf.clicked.connect(self.update_fun)
 
         # TODO ПОДКЛЮЧЕНИЕ К БД. ПОЛУЧЕНИЕ ДАННЫХ
         con = sqlite3.connect('language.db')
@@ -34,3 +41,9 @@ class History_from(QMainWindow):
                                          "border-radius: 10px; font-size: 12pt")
         self.plainTextEdit.setPlainText(information
                                         )
+
+    def update_fun(self):
+        self.update = Update_form(self, self.name)
+        self.update.setWindowIcon(QtGui.QIcon('icons/logo.png'))
+        self.update.setFixedSize(245, 335)
+        self.update.show()
