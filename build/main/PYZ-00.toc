@@ -1,5 +1,5 @@
 ('C:\\Users\\Admin - '
- 'Ruslan\\PycharmProjects\\TranslateProjects\\build\\main\\PYZ-00.pyz',
+ 'Ruslan\\Desktop\\project\\TranslateProjects\\build\\main\\PYZ-00.pyz',
  [('os',
    'C:\\Users\\Admin - '
    'Ruslan\\AppData\\Local\\Programs\\Python\\Python39\\lib\\os.py',
@@ -904,13 +904,13 @@
    'C:\\Users\\Admin - '
    'Ruslan\\AppData\\Local\\Programs\\Python\\Python39\\lib\\stat.py',
    'PYMODULE'),
-  ('tracemalloc',
-   'C:\\Users\\Admin - '
-   'Ruslan\\AppData\\Local\\Programs\\Python\\Python39\\lib\\tracemalloc.py',
-   'PYMODULE'),
   ('_py_abc',
    'C:\\Users\\Admin - '
    'Ruslan\\AppData\\Local\\Programs\\Python\\Python39\\lib\\_py_abc.py',
+   'PYMODULE'),
+  ('tracemalloc',
+   'C:\\Users\\Admin - '
+   'Ruslan\\AppData\\Local\\Programs\\Python\\Python39\\lib\\tracemalloc.py',
    'PYMODULE'),
   ('stringprep',
    'C:\\Users\\Admin - '
@@ -929,23 +929,28 @@
    'Ruslan\\AppData\\Local\\Programs\\Python\\Python39\\lib\\ctypes\\wintypes.py',
    'PYMODULE'),
   ('Database',
-   'C:\\Users\\Admin - Ruslan\\PycharmProjects\\TranslateProjects\\Database.py',
+   'C:\\Users\\Admin - '
+   'Ruslan\\Desktop\\project\\TranslateProjects\\Database.py',
    'PYMODULE'),
   ('SelectLang_second',
    'C:\\Users\\Admin - '
-   'Ruslan\\PycharmProjects\\TranslateProjects\\SelectLang_second.py',
+   'Ruslan\\Desktop\\project\\TranslateProjects\\SelectLang_second.py',
    'PYMODULE'),
   ('History_form_second',
    'C:\\Users\\Admin - '
-   'Ruslan\\PycharmProjects\\TranslateProjects\\History_form_second.py',
+   'Ruslan\\Desktop\\project\\TranslateProjects\\History_form_second.py',
+   'PYMODULE'),
+  ('Update_form',
+   'C:\\Users\\Admin - '
+   'Ruslan\\Desktop\\project\\TranslateProjects\\Update_form.py',
    'PYMODULE'),
   ('SecondForm',
    'C:\\Users\\Admin - '
-   'Ruslan\\PycharmProjects\\TranslateProjects\\SecondForm.py',
+   'Ruslan\\Desktop\\project\\TranslateProjects\\SecondForm.py',
    'PYMODULE'),
   ('History_form',
    'C:\\Users\\Admin - '
-   'Ruslan\\PycharmProjects\\TranslateProjects\\History_form.py',
+   'Ruslan\\Desktop\\project\\TranslateProjects\\History_form.py',
    'PYMODULE'),
   ('translate',
    'c:\\users\\admin - '
