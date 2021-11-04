@@ -94,7 +94,7 @@ class Window(QMainWindow):
         try:
             entering_data_into_a_table()
         except sqlite3.IntegrityError:
-            print('База данных уже созадана')
+            print('База данных уже создана')
         # TODO ДОБАВЛЕНИЕ ТЕКСТА ДЛЯ КНОПОК
         self.languagebutton.setText(self.from_what)
         self.languagebutton_second.setText(self.in_what)
