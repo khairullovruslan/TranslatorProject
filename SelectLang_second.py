@@ -36,7 +36,7 @@ class SecondForm_2(QMainWindow):
             lambda: webbrowser.open('https://t.me/I_am_a_busy_person'))
         self.contact_google.clicked.connect(
             lambda: webbrowser.open('mailto: khairullov.ruslan@gmail.com'))
-        self.selected.clicked.connect(self.select_lan)
+        self.selected.clicked.connect(self.clicked_check)
 
         # TODO ПОДДЕРЖИВАЕМЫЕ ЯЗЫКИ
         languages_dict = {'Русский': 'Russian', 'Английский': 'English',
@@ -70,10 +70,16 @@ class SecondForm_2(QMainWindow):
         self.list_of_languages.setToolTip('Список поддерживаемых языков')
         self.history_lang.setToolTip('Информация о выбранном языке')
         self.selected.setToolTip('Выбрать')
+        self.selected_flag = False
 
     def select_lan(self):  # TODO ПОЛУЧЕНИЕ ЯЗЫКА ИЗ QComboBox
-        self.lang = self.list_of_languages.currentText()
-        return self.list_of_languages.currentText()
+        if self.selected_flag:
+            self.lang = self.list_of_languages.currentText()
+            self.selected_flag = True
+            return self.list_of_languages.currentText()
+
+    def clicked_check(self):  # TODO ПРОВЕРКА НА ВЫБОР ЯЗЫКА
+        self.selected_flag = True
 
     def open_second_form(self):  # TODO ОТКРЫТИЕ ВТОРОГО ОКНА
         name = self.lang

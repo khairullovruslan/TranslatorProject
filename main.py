@@ -14,7 +14,7 @@ from PyQt5.QtCore import Qt
 
 class Translate(QMainWindow):
     def __init__(self):
-        super(Window, self).__init__()
+        super(Translate, self).__init__()
         # TODO ПОДКЛЮЧЕНИЕ К ДИЗАЙНУ
         uic.loadUi('designs/translate.ui', self)
         # TODO Styles
@@ -98,11 +98,13 @@ class Translate(QMainWindow):
         # TODO ДОБАВЛЕНИЕ ТЕКСТА ДЛЯ КНОПОК
         self.languagebutton.setText(self.from_what)
         self.languagebutton_second.setText(self.in_what)
+        self.select_flag = False
 
     def start(self):  # TODO ВЫПОЛНЕНИЕ ПЕРЕВОДА # ОСНОВНАЯ ФУНКЦИЯ
         try:  # TODO ПРОВЕРКА НА ОТКРЫТИЕ ВТОРОГО ОКНА
             if self.second_form.select_lan():
                 self.from_what = self.second_form.select_lan()
+
             if self.second_form1.select_lan():
                 self.in_what = self.second_form1.select_lan()
         except AttributeError:
@@ -115,6 +117,7 @@ class Translate(QMainWindow):
                         self.in_what = self.second_form1.select_lan()
                         self.languagebutton.setText(self.from_what)
                         self.languagebutton_second.setText(self.in_what)
+
 
                 except AttributeError:
                     pass
@@ -142,7 +145,7 @@ class Translate(QMainWindow):
     def open_second_form(self):  # TODO ОТКРЫТИЕ ВТОРОГО ОКНА
         self.second_form = SecondForm()
         self.second_form.setWindowIcon(QtGui.QIcon('icons/logo.png'))
-
+        self.select_flag = False
         self.second_form.setFixedSize(800, 600)
         self.second_form.show()
 
