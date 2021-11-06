@@ -26,7 +26,9 @@ class Update_form(QMainWindow):
     def update_info(self):  # TODO ОБНОВЛЕНИЕ ИНФОРМАЦИИИ ПРО ЯЗЫК
         con = sqlite3.connect('language.db')
         cur = con.cursor()
-        result = cur.execute(f"""SELECT language.History
+
+        # TODO ПОЛУЧЕНИЕ ИНФОРМАЦИИ ИЗ БД
+        result = cur.execute(f"""SELECT language.History 
                  from language
                         WHERE language.id =
                          (SELECT id_languages.id FROM id_languages 

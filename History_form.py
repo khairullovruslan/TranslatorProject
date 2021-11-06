@@ -47,4 +47,3 @@ class History_from(QMainWindow):
         self.update.setWindowIcon(QtGui.QIcon('icons/logo.png'))
         self.update.setFixedSize(245, 335)
         self.update.show()
-

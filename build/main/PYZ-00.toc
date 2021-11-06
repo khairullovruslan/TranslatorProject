@@ -256,6 +256,14 @@
    'C:\\Users\\Admin - '
    'Ruslan\\AppData\\Local\\Programs\\Python\\Python39\\lib\\zipimport.py',
    'PYMODULE'),
+  ('importlib.abc',
+   'C:\\Users\\Admin - '
+   'Ruslan\\AppData\\Local\\Programs\\Python\\Python39\\lib\\importlib\\abc.py',
+   'PYMODULE'),
+  ('typing',
+   'C:\\Users\\Admin - '
+   'Ruslan\\AppData\\Local\\Programs\\Python\\Python39\\lib\\typing.py',
+   'PYMODULE'),
   ('multiprocessing.process',
    'C:\\Users\\Admin - '
    'Ruslan\\AppData\\Local\\Programs\\Python\\Python39\\lib\\multiprocessing\\process.py',
@@ -560,10 +568,6 @@
    'C:\\Users\\Admin - '
    'Ruslan\\AppData\\Local\\Programs\\Python\\Python39\\lib\\asyncio\\staggered.py',
    'PYMODULE'),
-  ('typing',
-   'C:\\Users\\Admin - '
-   'Ruslan\\AppData\\Local\\Programs\\Python\\Python39\\lib\\typing.py',
-   'PYMODULE'),
   ('asyncio.tasks',
    'C:\\Users\\Admin - '
    'Ruslan\\AppData\\Local\\Programs\\Python\\Python39\\lib\\asyncio\\tasks.py',
@@ -832,10 +836,6 @@
    'C:\\Users\\Admin - '
    'Ruslan\\AppData\\Local\\Programs\\Python\\Python39\\lib\\pathlib.py',
    'PYMODULE'),
-  ('importlib.abc',
-   'C:\\Users\\Admin - '
-   'Ruslan\\AppData\\Local\\Programs\\Python\\Python39\\lib\\importlib\\abc.py',
-   'PYMODULE'),
   ('importlib._bootstrap',
    'C:\\Users\\Admin - '
    'Ruslan\\AppData\\Local\\Programs\\Python\\Python39\\lib\\importlib\\_bootstrap.py',
@@ -904,6 +904,10 @@
    'C:\\Users\\Admin - '
    'Ruslan\\AppData\\Local\\Programs\\Python\\Python39\\lib\\stat.py',
    'PYMODULE'),
+  ('stringprep',
+   'C:\\Users\\Admin - '
+   'Ruslan\\AppData\\Local\\Programs\\Python\\Python39\\lib\\stringprep.py',
+   'PYMODULE'),
   ('_py_abc',
    'C:\\Users\\Admin - '
    'Ruslan\\AppData\\Local\\Programs\\Python\\Python39\\lib\\_py_abc.py',
@@ -911,10 +915,6 @@
   ('tracemalloc',
    'C:\\Users\\Admin - '
    'Ruslan\\AppData\\Local\\Programs\\Python\\Python39\\lib\\tracemalloc.py',
-   'PYMODULE'),
-  ('stringprep',
-   'C:\\Users\\Admin - '
-   'Ruslan\\AppData\\Local\\Programs\\Python\\Python39\\lib\\stringprep.py',
    'PYMODULE'),
   ('webbrowser',
    'C:\\Users\\Admin - '

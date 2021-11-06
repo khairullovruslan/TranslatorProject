@@ -8,7 +8,8 @@ def entering_data_into_a_table():
          'Индонезийский', 'Японский', 'Турецкий', 'Украинский', 'Корейский',
          'Немецкий',
          'Итальянский',
-         'Польский', 'Норвежский'])
+         'Польский', 'Норвежский'])  # TODO КОНСТАНТА, В КОТОРОМ ХРАНЯТСЯ
+    # TODO НАЗВАНИЯ ЯЗЫКОВ НА РУССКОМ ЯЗЫКЕ
     languages_dict = {'Русский': 'Russian', 'Английский': 'English',
                       'Испанский': 'Spanish',
                       'Французский': 'French',
@@ -19,6 +20,8 @@ def entering_data_into_a_table():
                       'Корейский': 'Korean',
                       'Немецкий': 'German', 'Итальянский': 'Italian',
                       'Польский': 'Polish', 'Норвежский': 'Norwegian'}
+    # TODO КОНСТАНТА, В КОТОРОМ ХРАНЯТСЯ TODO НАЗВАНИЯ СООТВЕТСТВУЮЩИХ ЯЗЫКОВ
+    #  НА РУССКОМ ЯЗЫКЕ
     con = sqlite3.connect('language.db')
     cur = con.cursor()
     for i in range(15):
@@ -250,6 +253,8 @@ def entering_data_into_a_table():
                       'Общее число говорящих - 4.6 млн'
 
     }
+
+    # TODO КОНСТАНТА С ИНФОРМАЦИЕЙ О ЯЗЫКЕ
     language_image = {'Русский': 'Flag_of_Russia.png',
                       'Английский': 'Flag_of_England.png',
                       'Испанский': 'Flag_of_Spain.png',
@@ -267,6 +272,7 @@ def entering_data_into_a_table():
                       'Норвежский': 'Flag_of_Norway.png',
 
                       }
+    # TODO КОНСТАНТА С ПУТЕМ К ИЗООБРАЖЕНИЮ
     count = 0
     for i in sorted(languages_dict.keys()):
         cur.execute(
@@ -274,5 +280,7 @@ def entering_data_into_a_table():
             f"{count + 1},'{languages_dict[i]}',"
             f" '{languages_history[i]}', '{language_image[i]}')")
         count += 1
+
+    # TODO ВНЕСЕНИЕ ДАННЫХ В БД
     con.commit()
     con.close()

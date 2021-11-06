@@ -73,7 +73,7 @@ class SecondForm_2(QMainWindow):
         self.selected_flag = False
 
     def select_lan(self):  # TODO ПОЛУЧЕНИЕ ЯЗЫКА ИЗ QComboBox
-        if self.selected_flag:
+        if self.selected_flag:  # TODO ПРОВЕРКА ТОГО, ЧТО ЯЗЫК БЫЛ ВЫБРАН
             self.lang = self.list_of_languages.currentText()
             self.selected_flag = True
             return self.list_of_languages.currentText()
