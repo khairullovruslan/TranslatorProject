@@ -12,7 +12,7 @@ import webbrowser
 from PyQt5.QtCore import Qt
 
 
-class Window(QMainWindow):
+class Translate(QMainWindow):
     def __init__(self):
         super(Window, self).__init__()
         # TODO ПОДКЛЮЧЕНИЕ К ДИЗАЙНУ
@@ -196,7 +196,7 @@ def except_hook(cls, exception, traceback):  # TODO ПОИСК ОШИБОК
 if __name__ == '__main__':
     app = QApplication(sys.argv)
 
-    wnd = Window()
+    wnd = Translate()
     wnd.setFixedSize(1275, 820)
     wnd.setWindowIcon(QtGui.QIcon('icons/logo.png'))
     wnd.show()
