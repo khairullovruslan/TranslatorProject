@@ -1,7 +1,7 @@
 import sys
 from PyQt5 import uic, QtCore, QtGui
 import sqlite3
-from PyQt5.QtGui import QIcon, QCursor
+from PyQt5.QtGui import QCursor
 from PyQt5.QtWidgets import QMainWindow, QApplication
 from translate import Translator
 from SecondForm import SecondForm
@@ -10,6 +10,7 @@ from Database import entering_data_into_a_table
 import pyperclip as clipboard
 import webbrowser
 from PyQt5.QtCore import Qt
+
 
 # TODO ИМПОРТ ТРЕБУЕМЫХ БИБЛИОТЕК И МОДУЛЕЙ
 
@@ -78,20 +79,9 @@ class Translate(QMainWindow):
         self.contact_google.clicked.connect(
             lambda: webbrowser.open('mailto: khairullov.ruslan@gmail.com'))
         # TODO ПЕРЕМЕННЫЕ
-        Languages_dict = {'Русский': 'Russian', 'Английский': 'English',
-                          'Испанский': 'Spanish',
-                          'Французский': 'French',
-                          'Бенгальский': 'Bengali',
-                          'Португальский': 'Portuguese',
-                          'Индонезийский': 'Indonesian',
-                          'Японский': 'Japanese', 'Турецкий': 'Turkish',
-                          'Украинский': 'Ukrainian',
-                          'Корейский': 'Korean',
-                          'Немецкий': 'German', 'Итальянский': 'Italian',
-                          'Польский': 'Polish', 'Норвежский': 'Norwegian'}
-        self.from_what = 'Русский' # TODO НА КАКОМ ЯЗЫКЕ ТЕКСТ
-        self.in_what = 'Английский' # TODO НА КАКОМ ХОТИМ ПОЛУЧИТЬ РЕЗУЛЬТАТ
-        self.change_flag = False # TODO FLAG ДЛЯ ПРОВЕРКИ СМЕНЫ ЯЗЫКОВ МЕЖДУ СОБОЙ
+        self.from_what = 'Русский'  # TODO НА КАКОМ ЯЗЫКЕ ТЕКСТ
+        self.in_what = 'Английский'  # TODO НА КАКОМ ХОТИМ ПОЛУЧИТЬ РЕЗУЛЬТАТ
+        self.change_flag = False  # TODO FLAG ДЛЯ ПРОВЕРКИ СМЕНЫ ЯЗЫКОВ МЕЖДУ СОБОЙ
         # TODO СОЗДАНИЕ БД, ЕСЛИ ДАННЫЕ УЖЕ ЕСТЬ, ТО СОЗДАНИЕ ПРЕКРАЩАЕТСЯ
         try:
             entering_data_into_a_table()
@@ -100,7 +90,7 @@ class Translate(QMainWindow):
         # TODO ДОБАВЛЕНИЕ ТЕКСТА ДЛЯ КНОПОК
         self.languagebutton.setText(self.from_what)
         self.languagebutton_second.setText(self.in_what)
-        self.select_flag = False # TODO FLAG ДЛЯ ПРОВЕРКИ ВЫБОРА ЯЗЫКА
+        self.select_flag = False  # TODO FLAG ДЛЯ ПРОВЕРКИ ВЫБОРА ЯЗЫКА
 
     def start(self):  # TODO ВЫПОЛНЕНИЕ ПЕРЕВОДА # ОСНОВНАЯ ФУНКЦИЯ
         try:  # TODO ПРОВЕРКА НА ОТКРЫТИЕ ВТОРОГО ОКНА
@@ -109,17 +99,16 @@ class Translate(QMainWindow):
 
             if self.second_form1.select_lan():
                 self.in_what = self.second_form1.select_lan()
-        except AttributeError: # TODO ЕСЛИ ОДНО ИЗ ОКОН НЕ БЫЛО ОТКРЫТО, ТО ЛОВИМ ИСКЛЮЧЕНИЕ
+        except AttributeError:  # TODO ЕСЛИ ОДНО ИЗ ОКОН НЕ БЫЛО ОТКРЫТО, ТО ЛОВИМ ИСКЛЮЧЕНИЕ
             try:
                 if self.second_form1.select_lan():
                     self.in_what = self.second_form1.select_lan()
-            except AttributeError: # TODO И ТАК ДО КОНЦА
+            except AttributeError:  # TODO И ТАК ДО КОНЦА
                 try:
                     if self.second_form.select_lan():
                         self.in_what = self.second_form1.select_lan()
                         self.languagebutton.setText(self.from_what)
                         self.languagebutton_second.setText(self.in_what)
-
 
                 except AttributeError:
                     pass
@@ -127,9 +116,9 @@ class Translate(QMainWindow):
             self.change_flag = False
             first = self.from_what
             second = self.in_what
-            self.from_what = second # TODO СМЕНА ЯЗЫКОВ МЕЖДУ СОБОЙ
+            self.from_what = second  # TODO СМЕНА ЯЗЫКОВ МЕЖДУ СОБОЙ
             self.in_what = first
-            self.languagebutton.setText(self.from_what) # TODO ВСТАВКА НАЗВАНИЙ
+            self.languagebutton.setText(self.from_what)  # TODO ВСТАВКА НАЗВАНИЙ
             # TODO ЯЗЫКОВ ПОСЛЕ ИЗМЕНЕНИЯ
             self.languagebutton_second.setText(self.in_what)
         else:
@@ -157,10 +146,9 @@ class Translate(QMainWindow):
         self.second_form1.setFixedSize(800, 600)
         self.second_form1.show()
 
-    def get_translate(self,
-                      name):  # TODO ПОЛУЧЕНИЕ ТРЕБУЕМОГО ПОЛЬЗОВАТЕЛЕМ ЯЗЫКА
+    def get_translate(self, name):  # TODO ПОЛУЧЕНИЕ ТРЕБУЕМОГО ПОЛЬЗОВАТЕЛЕМ ЯЗЫКА
 
-        con = sqlite3.connect('language.db') # TODO ПОДКЛЮЧЕНИЕ К БД
+        con = sqlite3.connect('language.db')  # TODO ПОДКЛЮЧЕНИЕ К БД
         cur = con.cursor()
         result = cur.execute(f"""SELECT language.Translate from language
         WHERE language.id = (SELECT id_languages.id FROM id_languages 
@@ -169,7 +157,7 @@ class Translate(QMainWindow):
         for i in result:
             lang.append(i)
         con.close()
-        return lang[0][0] # TODO ПЕРЕДАЧА НАЗВАНИЯ
+        return lang[0][0]  # TODO ПЕРЕДАЧА НАЗВАНИЯ
 
     def change(self):  # TODO ПРОЦЕСС ИЗМЕНЕНИЕ ЯЗЫКОМ МЕСТАМИ
         first = self.languagebutton.text()
@@ -177,7 +165,7 @@ class Translate(QMainWindow):
         self.languagebutton.setText(second)
         self.languagebutton_second.setText(first)
         self.change_flag = True
-        first_text = self.text_reception.toPlainText() # TODO СМЕНА ТЕКСТОВ
+        first_text = self.text_reception.toPlainText()  # TODO СМЕНА ТЕКСТОВ
         second_text = self.text_output.toPlainText()
         self.text_reception.setPlainText(second_text)
         self.text_output.setPlainText(first_text)
@@ -198,7 +186,7 @@ def except_hook(cls, exception, traceback):  # TODO ПОИСК ОШИБОК
     sys.excepthook(cls, exception, traceback)
 
 
-if __name__ == '__main__': # TODO ОТКРЫТИЕ ПРОГРАММЫ БЕЗ .EXE
+if __name__ == '__main__':  # TODO ОТКРЫТИЕ ПРОГРАММЫ БЕЗ .EXE
     app = QApplication(sys.argv)
 
     wnd = Translate()

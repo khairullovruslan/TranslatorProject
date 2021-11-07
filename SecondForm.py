@@ -68,6 +68,7 @@ class SecondForm(QMainWindow):
         self.selected.setToolTip('Выбрать')
 
         self.selected_flag = False
+        self.lang_for_inf = 'Русский'
 
     def select_lan(self):  # TODO ПОЛУЧЕНИЕ ЯЗЫКА ИЗ QComboBox
         if self.selected_flag:  # TODO ПРОВЕРКА ТОГО, ЧТО ЯЗЫК БЫЛ ВЫБРАН
@@ -77,11 +78,13 @@ class SecondForm(QMainWindow):
 
     def clicked_check(self):  # TODO ПРОВЕРКА НА ВЫБОР ЯЗЫКА
         self.selected_flag = True
+        self.lang_for_inf = self.list_of_languages.currentText()
 
     def open_second_form(self):  # TODO ОТКРЫТИЕ ВТОРОГО ОКНА
-        name = self.lang
+        name = self.lang_for_inf
+        print(name)
+
         self.history_form = History_from(self, name)
         self.history_form.setWindowIcon(QtGui.QIcon('icons/logo.png'))
         self.history_form.setFixedSize(455, 589)
         self.history_form.show()
-
