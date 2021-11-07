@@ -904,10 +904,6 @@
    'C:\\Users\\Admin - '
    'Ruslan\\AppData\\Local\\Programs\\Python\\Python39\\lib\\stat.py',
    'PYMODULE'),
-  ('stringprep',
-   'C:\\Users\\Admin - '
-   'Ruslan\\AppData\\Local\\Programs\\Python\\Python39\\lib\\stringprep.py',
-   'PYMODULE'),
   ('_py_abc',
    'C:\\Users\\Admin - '
    'Ruslan\\AppData\\Local\\Programs\\Python\\Python39\\lib\\_py_abc.py',
@@ -915,6 +911,10 @@
   ('tracemalloc',
    'C:\\Users\\Admin - '
    'Ruslan\\AppData\\Local\\Programs\\Python\\Python39\\lib\\tracemalloc.py',
+   'PYMODULE'),
+  ('stringprep',
+   'C:\\Users\\Admin - '
+   'Ruslan\\AppData\\Local\\Programs\\Python\\Python39\\lib\\stringprep.py',
    'PYMODULE'),
   ('webbrowser',
    'C:\\Users\\Admin - '

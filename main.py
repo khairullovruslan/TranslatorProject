@@ -151,7 +151,7 @@ class Translate(QMainWindow):
         con = sqlite3.connect('language.db')  # TODO ПОДКЛЮЧЕНИЕ К БД
         cur = con.cursor()
         result = cur.execute(f"""SELECT language.Translate from language
-        WHERE language.id = (SELECT id_languages.id FROM id_languages 
+        WHERE language.id = (SELECT id_languages.id FROM id_languages   
         WHERE Language = '{name}')""").fetchall()
         lang = []
         for i in result:
